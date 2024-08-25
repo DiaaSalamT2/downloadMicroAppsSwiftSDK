@@ -1,0 +1,6 @@
+framework module Pods_downloadMicroAppsSwiftSDK {
+  umbrella header "Pods-downloadMicroAppsSwiftSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
