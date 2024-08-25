@@ -9,19 +9,19 @@ import UIKit
 import Cordova
 import Capacitor
 
-public class WebViewController: CAPBridgeViewController {
+open class WebViewController: CAPBridgeViewController {
     public var assetsFolderPath: String?
     
 
     // MARK: - Init
-    public override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
 
     }
        
        
-    public override func viewWillDisappear(_ animated: Bool) {
+    open override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
             NotificationCenter.default.removeObserver(self)
             self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -29,8 +29,9 @@ public class WebViewController: CAPBridgeViewController {
     
    
     
-    public override func loadView() {
+    open override func loadView() {
        if let assetsFolderPath = assetsFolderPath {
+           super.assetsFolder = assetsFolderPath
            super.loadView()
         super.view.backgroundColor = UIColor.white;
 
@@ -39,7 +40,7 @@ public class WebViewController: CAPBridgeViewController {
        }
     
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad();
         showLoading();
         self.view.backgroundColor = UIColor.white
